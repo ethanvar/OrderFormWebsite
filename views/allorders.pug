@@ -1,0 +1,19 @@
+html
+    head
+        //include ./header
+        title Home
+    body
+        if session.loggedin
+            include ./partials/loggedin
+        else
+            include ./partials/nologin
+        link(rel='stylesheet', href='style.css')
+        h1#orders Orders:
+        ul
+            for order in orders
+                - let x = order._id 
+                - console.log(x)
+                - console.log(order.order.restaurantName)
+                p
+                    a(href='/orders/'+x) #{order.order.username}: #{order.order.restaurantName}
+        script(src='../client.js')

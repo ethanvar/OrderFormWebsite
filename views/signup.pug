@@ -1,0 +1,40 @@
+doctype html
+html(lang='en')
+  head
+    //<link rel="stylesheet" type="text/css" href="/css/SignUp.css" />
+  body
+    if session.loggedin
+      include ./partials/loggedin
+    else
+      include ./partials/nologin
+    link(rel='stylesheet', href='style.css')
+    .userloginforms
+      form.signupContainer(method="POST" action="/SignUp")
+        p
+          h1 Create Account
+          label(for='name')
+              b Name: 
+          input#nameCr(type='text' placeholder='Enter Username' name='name' required='')
+          |
+        p
+          label(for='psw')
+              b Password: 
+          input#pswCr(type='password' placeholder='Enter Password' name='password' required='')
+          br
+          br
+          button.btn.createAcc(type='submit') Create your new account
+
+      form.logInContainer(method="POST" action="/logIn")
+        h1 Log In
+        p
+          label(for='name')
+              b Name: 
+          input#name(type='text' placeholder='Enter Username' name='name' required='')
+        |
+        p
+          label(for='psw')
+              b Password: 
+          input#psw(type='password' placeholder='Enter Password' name='password' required='')
+          br
+          br
+          button.btn.createAcc(type='submit') log in

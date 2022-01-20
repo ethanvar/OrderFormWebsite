@@ -1,0 +1,32 @@
+head
+  title Order Form
+  style.
+    .column {
+    float: left;
+    }
+    .left{
+    width: 15%;
+    }
+    .right {
+    width: 15%;
+    }
+    .middle {
+    width: 70%;
+    }
+    .main {
+      margin: auto;
+      width: 50%;
+    }
+body(onload='init()')   
+    include ./partials/loggedin
+    link(rel='stylesheet', href='style.css')
+    select#restaurant-select
+    br
+    br
+    #info
+    .main
+      #main
+        #left.column.left
+        #middle.column.middle
+        #right.column.right
+    script(src='orderform.js')

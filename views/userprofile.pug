@@ -1,0 +1,25 @@
+html
+    head
+        //include ./header
+        title Home
+    body
+        if session.loggedin
+            include ./partials/loggedin
+        else
+            include ./partials/nologin
+        link(rel='stylesheet', href='../style.css')
+        .userprivacy
+            if session.loggedin
+                if session.username==user.username 
+                    p Privacy: #{user.privacy} 
+                    button#changePrivacy(onclick="changePrivacy()") change privacy
+
+        h1#username Orders by: #{user.username}
+        ul
+            for order in orders
+                - let x = order._id 
+                - console.log(x)
+                - console.log(order.order.restaurantName)
+                p
+                    a(href='/orders/'+x) #{order.order.restaurantName}
+        script(src='../client.js')

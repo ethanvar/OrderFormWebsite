@@ -1,0 +1,11 @@
+html
+    head
+        //include ./header
+        title Home
+    body
+        if session.loggedin
+            include ./partials/loggedin
+        else
+            include ./partials/nologin
+        link(rel='stylesheet', href='style.css')
+        h1.welcomemesage Welcome to the Restaurant

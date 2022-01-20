@@ -1,0 +1,18 @@
+html
+    head
+        title Home
+    body
+        if session.loggedin
+            include ./partials/loggedin
+        else
+            include ./partials/nologin
+        link(rel='stylesheet', href='../style.css')
+        h1 #{order.order.restaurantName}
+        p Subtotal: #{order.order.subtotal}$
+        p Total: #{order.order.subtotal}$
+        p Delivery Fee: #{order.order.fee}$
+        p Tax: #{order.order.tax}$
+        #orders
+            h3 Items:
+            each val, key in order.order.order
+                p Item: #{val.name}, Quantity: #{val.quantity}

@@ -1,0 +1,15 @@
+html
+    head
+        //include ./header
+        title Home
+    body
+        if session.loggedin
+            include ./partials/loggedin
+        else
+            include ./partials/nologin
+        link(rel='stylesheet', href='style.css')
+        h1 Search Users
+        .search-bar(id='search')
+            input(type='text' id='search-input' placeholder='Search' name='search-bar' oninput="change()" required='')
+            .searchdiv(id='searchdiv')
+        script(src='client.js')
