@@ -15,6 +15,10 @@ var options = {
 kinetic = new ZFS.KineticTracker(options);
 kinetic.init();
 
+function tracking() {
+	
+}
+
 function signUp(){
     console.log('singIn')
     let user = {};
