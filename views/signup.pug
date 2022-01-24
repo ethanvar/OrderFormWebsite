@@ -2,6 +2,8 @@ doctype html
 html(lang='en')
   head
     //<link rel="stylesheet" type="text/css" href="/css/SignUp.css" />
+    script(src='../kinetic-sdk-1.0.1.min.js')
+    script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")    
   body
     if session.loggedin
       include ./partials/loggedin
@@ -37,4 +39,9 @@ html(lang='en')
           input#psw(type='password' placeholder='Enter Password' name='password' required='')
           br
           br
-          button.btn.createAcc(type='submit') log in
+          button.btn.createAcc(type='submit' onclick='stopTracking()') log in
+
+      button.btn.startTrack(type='submit' onclick='startTracking()') Start Tracking   
+    script(src='../client.js')
+    //script(src='../kinetic-sdk-1.0.1.min.js')
+    //script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")

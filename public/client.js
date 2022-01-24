@@ -1,3 +1,20 @@
+
+var options = {
+	logging: false,
+	trackingTimeSensitivity: 10,
+	mouseTrackingElement: '#trackarea',
+	debug: true,
+	autoTracking: false,
+	appKey: "StQ5YP5Q06tyW6V",
+	appSecret: "Awcp46y1t+nn9Q86ZOVIgM7hSax3wEQ2hTwDZDI9tDxT3hGMJUUGvQyG84l88n8sHQ==",
+	trackingInterval: 60,
+	sensorPollingFrequency: 10,
+	packageId: "order.form.com"
+};
+
+kinetic = new ZFS.KineticTracker(options);
+kinetic.init();
+
 function signUp(){
     console.log('singIn')
     let user = {};
